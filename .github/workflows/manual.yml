@@ -33,10 +33,10 @@ jobs:
 
       - name: Push Image
         run: |
-          docker push intergral/grafana-deep:D${{ github.event.inputs.datasource }}P{{ github.event.inputs.panel }}
+          docker push intergral/grafana-deep:D${{ github.event.inputs.datasource }}P${{ github.event.inputs.panel }}
 
       - name: Push Latest
         if: github.event.inputs.latest != false
         run: |
-          docker tag intergral/grafana-deep:D${{ github.event.inputs.datasource }}P{{ github.event.inputs.panel }} intergral/grafana-deep:latest
+          docker tag intergral/grafana-deep:D${{ github.event.inputs.datasource }}P${{ github.event.inputs.panel }} intergral/grafana-deep:latest
           docker push intergral/grafana-deep:latest
